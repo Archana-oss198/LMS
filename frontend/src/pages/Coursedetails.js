@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Navbar from "../components/Navbar";
 
 function CourseDetails() {
 
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const [course, setCourse] = useState(null);
 
@@ -23,6 +24,15 @@ function CourseDetails() {
   }, [id]);
 
   const enrollCourse = () => {
+
+    // check login status
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+    if (!isLoggedIn) {
+      alert("Please login first");
+      navigate("/login");
+      return;
+    }
 
     let myCourses =
       JSON.parse(localStorage.getItem("myCourses")) || [];
