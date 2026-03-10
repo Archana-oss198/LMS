@@ -1,0 +1,150 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "title": "C Programming",
+      "instructor": "Ravi Kumar",
+      "duration": "8 hours",
+      "category": "Programming",
+      "level": "Beginner",
+      "thumbnail": "https://images.icon-icons.com/2415/PNG/512/c_plain_logo_icon_146610.png",
+      "description": "Learn the fundamentals of C programming including variables, control structures, functions, and arrays. This course builds a strong foundation for understanding core programming concepts and system-level programming.",
+      "lessons": [
+        "Introduction to C",
+        "Variables and Data Types",
+        "Operators",
+        "Control Statements",
+        "Functions",
+        "Arrays"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Python Programming",
+      "instructor": "Anita Sharma",
+      "duration": "10 hours",
+      "category": "Programming",
+      "level": "Beginner",
+      "thumbnail": "https://cdn-icons-png.flaticon.com/512/5968/5968350.png",
+      "description": "This course introduces Python programming from scratch. Students will learn variables, loops, functions, and file handling, making it ideal for beginners interested in programming and automation.",
+      "lessons": [
+        "Python Introduction",
+        "Variables",
+        "Lists and Tuples",
+        "Loops",
+        "Functions",
+        "File Handling"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Java Full Stack",
+      "instructor": "Suresh Reddy",
+      "duration": "20 hours",
+      "category": "Web Development",
+      "level": "Intermediate",
+      "thumbnail": "https://cdn-icons-png.flaticon.com/512/226/226777.png",
+      "description": "A complete full-stack development course using Java. Learn backend development with Spring Boot, build REST APIs, and integrate them with modern frontend frameworks like React.",
+      "lessons": [
+        "Java Basics",
+        "OOP Concepts",
+        "Spring Boot",
+        "REST APIs",
+        "React Integration",
+        "Project Development"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "HTML & CSS",
+      "instructor": "Priya Nair",
+      "duration": "6 hours",
+      "category": "Web Development",
+      "level": "Beginner",
+      "thumbnail": "https://cdn-icons-png.flaticon.com/512/732/732212.png",
+      "description": "Learn how to build beautiful and responsive web pages using HTML and CSS. This course covers layouts, forms, styling, flexbox, grid, and responsive design techniques.",
+      "lessons": [
+        "HTML Basics",
+        "Forms and Inputs",
+        "CSS Selectors",
+        "Flexbox",
+        "Grid Layout",
+        "Responsive Design"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "React Basics",
+      "instructor": "John",
+      "duration": "7 hours",
+      "category": "Web Development",
+      "level": "Intermediate",
+      "thumbnail": "https://cdn-icons-png.flaticon.com/512/1126/1126012.png",
+      "description": "Understand the basics of React including components, props, hooks, and routing. This course helps you build modern single-page applications with reusable UI components.",
+      "lessons": [
+        "Introduction to React",
+        "Components",
+        "Props",
+        "useState",
+        "useEffect",
+        "Routing"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Data Science with Python",
+      "instructor": "Rahul Singh",
+      "duration": "12 hours",
+      "category": "Data Science",
+      "level": "Advanced",
+      "thumbnail": "https://cdn-icons-png.flaticon.com/512/2103/2103832.png",
+      "description": "Explore data science using Python. Learn data analysis with Pandas, numerical computing with NumPy, data visualization, and basic machine learning techniques.",
+      "lessons": [
+        "NumPy Basics",
+        "Pandas Data Analysis",
+        "Data Visualization",
+        "Machine Learning Intro",
+        "Regression",
+        "Classification"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "JavaScript Programming",
+      "instructor": "Arjun Mehta",
+      "duration": "9 hours",
+      "category": "Programming",
+      "level": "Beginner",
+      "thumbnail": "https://cdn-icons-png.flaticon.com/512/5968/5968292.png",
+      "description": "Learn JavaScript from the basics to advanced concepts. This course covers variables, functions, arrays, objects, DOM manipulation, and event handling.",
+      "lessons": [
+        "Introduction to JavaScript",
+        "Variables and Data Types",
+        "Operators",
+        "Functions",
+        "Arrays and Objects",
+        "DOM Manipulation",
+        "Events in JavaScript"
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Node.js Development",
+      "instructor": "Kiran Patel",
+      "duration": "11 hours",
+      "category": "Backend Development",
+      "level": "Intermediate",
+      "thumbnail": "https://cdn-icons-png.flaticon.com/512/919/919825.png",
+      "description": "Build scalable backend applications using Node.js. Learn modules, file systems, creating servers, Express.js framework, and building RESTful APIs.",
+      "lessons": [
+        "Introduction to Node.js",
+        "Node.js Environment Setup",
+        "Modules in Node.js",
+        "File System Module",
+        "Creating HTTP Server",
+        "Express.js Introduction",
+        "Building REST APIs"
+      ]
+    }
+  ]
+}
