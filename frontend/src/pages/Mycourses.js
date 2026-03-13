@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
+import { Container, Row, Col, Card, Alert } from "react-bootstrap";
 
 function MyCourses() {
 
@@ -19,65 +20,59 @@ function MyCourses() {
 
       <Navbar />
 
-      <div style={{ padding: "20px" }}>
+      <Container className="mt-4">
 
-        <h1>My Courses</h1>
+        <h1 className="mb-4">My Courses</h1>
 
         {courses.length === 0 ? (
-          <p>No enrolled courses yet.</p>
+
+          <Alert variant="info">
+            No enrolled courses yet.
+          </Alert>
+
         ) : (
 
-          <div style={styles.grid}>
+          <Row>
 
             {courses.map((course) => (
 
-              <div key={course.id} style={styles.card}>
+              <Col md={4} lg={3} key={course.id} className="mb-4">
 
-                <img
-                  src={course.thumbnail}
-                  alt={course.title}
-                  style={styles.image}
-                />
+                <Card className="h-100">
 
-                <h3>{course.title}</h3>
+                  <Card.Img
+                    variant="top"
+                    src={course.thumbnail}
+                    style={{ height: "150px", objectFit: "cover", width:"200px", marginLeft:"50px"  }}
+                  />
 
-                <p><b>Instructor:</b> {course.instructor}</p>
+                  <Card.Body className="text-center">
 
-                <p><b>Duration:</b> {course.duration}</p>
+                    <Card.Title>
+                      {course.title}
+                    </Card.Title>
 
-              </div>
+                    <Card.Text>
+                      <b>Instructor:</b> {course.instructor} <br />
+                      <b>Duration:</b> {course.duration}
+                    </Card.Text>
+
+                  </Card.Body>
+
+                </Card>
+
+              </Col>
 
             ))}
 
-          </div>
+          </Row>
 
         )}
 
-      </div>
+      </Container>
 
     </div>
   );
 }
-
-const styles = {
-  grid: {
-    display: "grid",
-    gridTemplateColumns: "repeat(auto-fill, minmax(250px,1fr))",
-    gap: "20px",
-    marginTop: "30px"
-  },
-  card: {
-    border: "1px solid #ddd",
-    borderRadius: "10px",
-    padding: "15px",
-    textAlign: "center"
-  },
-  image: {
-    width: "100%",
-    height: "150px",
-    objectFit: "cover",
-    borderRadius: "8px"
-  }
-};
 
 export default MyCourses;

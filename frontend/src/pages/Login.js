@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
 
 function Login() {
 
@@ -25,62 +26,60 @@ function Login() {
   };
 
   return (
-    <div style={styles.container}>
+    <Container className="mt-5">
 
-      <h2>Login</h2>
+      <Row className="justify-content-center">
 
-      <form onSubmit={handleLogin} style={styles.form}>
+        <Col md={4}>
 
-        <input
-          type="email"
-          placeholder="Enter Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          style={styles.input}
-        />
+          <Card className="p-4">
 
-        <input
-          type="password"
-          placeholder="Enter Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          style={styles.input}
-        />
+            <Card.Title className="text-center mb-3">
+              Login
+            </Card.Title>
 
-        <button type="submit" style={styles.button}>
-          Login
-        </button>
+            <Form onSubmit={handleLogin}>
 
-      </form>
+              <Form.Group className="mb-3">
 
-    </div>
+                <Form.Control
+                  type="email"
+                  placeholder="Enter Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+
+              </Form.Group>
+
+              <Form.Group className="mb-3">
+
+                <Form.Control
+                  type="password"
+                  placeholder="Enter Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+
+              </Form.Group>
+
+              <Button
+                variant="primary"
+                type="submit"
+                className="w-100"
+              >
+                Login
+              </Button>
+
+            </Form>
+
+          </Card>
+
+        </Col>
+
+      </Row>
+
+    </Container>
   );
 }
-
-const styles = {
-  container: {
-    width: "300px",
-    margin: "100px auto",
-    textAlign: "center",
-    padding: "20px",
-    border: "1px solid #ddd",
-    borderRadius: "10px"
-  },
-  form: {
-    display: "flex",
-    flexDirection: "column"
-  },
-  input: {
-    padding: "10px",
-    margin: "10px 0"
-  },
-  button: {
-    padding: "10px",
-    backgroundColor: "blue",
-    color: "white",
-    border: "none",
-    cursor: "pointer"
-  }
-};
 
 export default Login;

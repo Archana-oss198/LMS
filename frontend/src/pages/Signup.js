@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
 
 function Signup() {
 
@@ -32,70 +33,71 @@ function Signup() {
   };
 
   return (
-    <div style={styles.container}>
+    <Container className="mt-5">
 
-      <h2>Signup</h2>
+      <Row className="justify-content-center">
 
-      <form onSubmit={handleSignup} style={styles.form}>
+        <Col md={4}>
 
-        <input
-          type="text"
-          placeholder="Enter Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          style={styles.input}
-        />
+          <Card className="p-4">
 
-        <input
-          type="email"
-          placeholder="Enter Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          style={styles.input}
-        />
+            <Card.Title className="text-center mb-3">
+              Signup
+            </Card.Title>
 
-        <input
-          type="password"
-          placeholder="Enter Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          style={styles.input}
-        />
+            <Form onSubmit={handleSignup}>
 
-        <button type="submit" style={styles.button}>
-          Signup
-        </button>
+              <Form.Group className="mb-3">
 
-      </form>
+                <Form.Control
+                  type="text"
+                  placeholder="Enter Name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
 
-    </div>
+              </Form.Group>
+
+              <Form.Group className="mb-3">
+
+                <Form.Control
+                  type="email"
+                  placeholder="Enter Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+
+              </Form.Group>
+
+              <Form.Group className="mb-3">
+
+                <Form.Control
+                  type="password"
+                  placeholder="Enter Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+
+              </Form.Group>
+
+              <Button
+                variant="success"
+                type="submit"
+                className="w-100"
+              >
+                Signup
+              </Button>
+
+            </Form>
+
+          </Card>
+
+        </Col>
+
+      </Row>
+
+    </Container>
   );
 }
-
-const styles = {
-  container: {
-    width: "320px",
-    margin: "100px auto",
-    padding: "20px",
-    textAlign: "center",
-    border: "1px solid #ddd",
-    borderRadius: "10px"
-  },
-  form: {
-    display: "flex",
-    flexDirection: "column"
-  },
-  input: {
-    padding: "10px",
-    margin: "10px 0"
-  },
-  button: {
-    padding: "10px",
-    backgroundColor: "green",
-    color: "white",
-    border: "none",
-    cursor: "pointer"
-  }
-};
 
 export default Signup;

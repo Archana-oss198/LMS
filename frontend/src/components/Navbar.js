@@ -1,38 +1,48 @@
 import { Link } from "react-router-dom";
+import { Navbar, Nav, Container } from "react-bootstrap";
 
-function Navbar() {
+function NavigationBar() {
   return (
-    <nav style={styles.navbar}>
-      <h2 style={styles.logo}>LMS Platform</h2>
 
-      <div>
-        <Link style={styles.link} to="/">Home</Link>
-        <Link style={styles.link} to="/my-courses">My Courses</Link>
-        <Link style={styles.link} to="/login">Login</Link>
-        <Link style={styles.link} to="/signup">Signup</Link>
-      </div>
-    </nav>
+    <Navbar bg="dark" variant="dark" expand="lg">
+
+      <Container>
+
+        <Navbar.Brand as={Link} to="/">
+          LMS Platform
+        </Navbar.Brand>
+
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+
+        <Navbar.Collapse id="basic-navbar-nav">
+
+          <Nav className="ms-auto">
+
+            <Nav.Link as={Link} to="/">
+              Home
+            </Nav.Link>
+
+            <Nav.Link as={Link} to="/my-courses">
+              My Courses
+            </Nav.Link>
+
+            <Nav.Link as={Link} to="/login">
+              Login
+            </Nav.Link>
+
+            <Nav.Link as={Link} to="/signup">
+              Signup
+            </Nav.Link>
+
+          </Nav>
+
+        </Navbar.Collapse>
+
+      </Container>
+
+    </Navbar>
+
   );
 }
 
-const styles = {
-  navbar: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    backgroundColor: "#333",
-    padding: "10px 20px",
-    color: "white"
-  },
-  logo: {
-    margin: 0
-  },
-  link: {
-    color: "white",
-    marginLeft: "15px",
-    textDecoration: "none",
-    fontWeight: "bold"
-  }
-};
-
-export default Navbar;
+export default NavigationBar;

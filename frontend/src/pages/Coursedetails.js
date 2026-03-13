@@ -1,13 +1,12 @@
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import Navbar from "../components/Navbar";
+import { Container, Row, Col, Card, Button, ListGroup } from "react-bootstrap";
 
 function CourseDetails() {
 
   const { id } = useParams();
-  const navigate = useNavigate();
-
   const [course, setCourse] = useState(null);
 
   useEffect(() => {
@@ -25,15 +24,6 @@ function CourseDetails() {
 
   const enrollCourse = () => {
 
-    // check login status
-    const isLoggedIn = localStorage.getItem("isLoggedIn");
-
-    if (!isLoggedIn) {
-      alert("Please login first");
-      navigate("/login");
-      return;
-    }
-
     let myCourses =
       JSON.parse(localStorage.getItem("myCourses")) || [];
 
@@ -48,7 +38,7 @@ function CourseDetails() {
   };
 
   if (!course) {
-    return <h2>Loading...</h2>;
+    return <h2 className="text-center mt-5">Loading...</h2>;
   }
 
   return (
@@ -56,56 +46,66 @@ function CourseDetails() {
 
       <Navbar />
 
-      <div style={styles.container}>
+      <Container className="mt-4">
 
-        <img
-          src={course.thumbnail}
-          alt={course.title}
-          style={styles.image}
-        />
+        <Row className="justify-content-center">
 
-        <h1>{course.title}</h1>
+          <Col md={8}>
 
-        <p><b>Instructor:</b> {course.instructor}</p>
+            <Card>
 
-        <p><b>Duration:</b> {course.duration}</p>
+              <Card.Img
+                variant="top"
+                src={course.thumbnail}
+                style={{ height: "160px", width:"200px", marginLeft:"20px"}}
+              />
 
-        <p><b>Description:</b> {course.description}</p>
+              <Card.Body>
 
-        <button onClick={enrollCourse} style={styles.button}>
-          Enroll Course
-        </button>
+                <Card.Title as="h2">
+                  {course.title}
+                </Card.Title>
 
-        <h2>Lessons</h2>
+                <Card.Text>
+                  <b>Instructor:</b> {course.instructor} <br />
+                  <b>Duration:</b> {course.duration}
+                </Card.Text>
 
-        <ul>
-          {course.lessons.map((lesson, index) => (
-            <li key={index}>{lesson}</li>
-          ))}
-        </ul>
+                <Card.Text>
+                  <b>Description:</b> {course.description}
+                </Card.Text>
 
-      </div>
+                <Button
+                  variant="primary"
+                  className="mb-3"
+                  onClick={enrollCourse}
+                >
+                  Enroll Course
+                </Button>
+                <p>Please Login First</p>
+
+                <h4>Lessons</h4>
+
+                <ListGroup>
+                  {course.lessons.map((lesson, index) => (
+                    <ListGroup.Item key={index}>
+                      {lesson}
+                    </ListGroup.Item>
+                  ))}
+                </ListGroup>
+
+              </Card.Body>
+
+            </Card>
+
+          </Col>
+
+        </Row>
+
+      </Container>
 
     </div>
   );
 }
-
-const styles = {
-  container: {
-    padding: "20px"
-  },
-  image: {
-    width: "300px",
-    borderRadius: "10px"
-  },
-  button: {
-    padding: "10px",
-    marginTop: "10px",
-    backgroundColor: "blue",
-    color: "white",
-    border: "none",
-    cursor: "pointer"
-  }
-};
 
 export default CourseDetails;
